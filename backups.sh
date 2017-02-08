@@ -49,9 +49,10 @@ PLEX_PATH=/var/lib/plexmediaserver/
 # Rsync to backup folder
 sudo rsync -azv $PLEX_PATH $BK_PATH/plex/
 
-### Sync to Cloud
+### Sync to the Cloud
 # File Location
 ACD_PATH=backups:
-# Rclone sync to ACD
+# Fix permissions
 sudo chmod -R 775 $BK_PATH
+# Rclone sync to ACD
 /usr/bin/rclone sync --transfers=100 --checkers=100 $BK_PATH $ACD_PATH
