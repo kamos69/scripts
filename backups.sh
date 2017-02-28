@@ -39,7 +39,7 @@ crontab -l > $BK_PATH/cron-backup.txt
 
 ### Scripts
 # File location
-SCRIPTS_PATH=/home/$USER/scripts/
+SCRIPTS_PATH=/home/$USER/crons/
 # Create archive
 sudo /bin/tar -cvf $BK_PATH/scripts/scripts-`date \+%Y\%m\%d`.tar.gz $SCRIPTS_PATH
 
@@ -49,19 +49,9 @@ PLEX_PATH=/var/lib/plexmediaserver/
 # Rsync to backup folder
 sudo rsync -azv $PLEX_PATH $BK_PATH/plex/
 
-### Rclone
-# Rsync to backup folder
-sudo rsync -azv /home/$USER/.rclone.conf $BK_PATH/
-
-### Config
-# File location
-CONFIG_PATH=/home/$USER/.config/
-# Create archive
-sudo /bin/tar -cvf $BK_PATH/config/config-`date \+%Y\%m\%d`.tar.gz  $CONFIG_PATH
-
 ### Sync to Cloud
 # File Location
 ACD_PATH=backups:
 # Rclone sync to ACD
 sudo chmod -R 775 $BK_PATH
-/usr/bin/rclone sync --transfers=100 --checkers=100 $BK_PATH $ACD_PATH
+/usr/bin/rclone sync --transfers=100 --checkers=100 $BK_PATH/ $ACD_PATH
