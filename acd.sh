@@ -1,5 +1,18 @@
 #!/bin/bash
-/usr/bin/rclone mount acd:Encrypted /home/$USER/acd/.cloud --read-only --allow-other &
-sudo ENCFS6_CONFIG='/home/$USER/acd/encfs6.xml' encfs --extpass='echo ' --public /home/$USER/acd/.cloud /home/$USER/acd/cloud
-/usr/bin/rclone mount acdcrypt: /home/$USER/media --read-only --allow-other &
-unionfs-fuse -o cow -o allow_other /home/$USER/.media=RW:/home/$USER/media=RO /home/$USER/cloud
+# Mount ACD ENCFS
+/usr/bin/rclone mount acd:Encrypted /home/kamos/acd/.cloud --read-only --allow-other &
+
+# Setup ENCFS
+sudo ENCFS6_CONFIG='/home/kamos/acd/encfs6.xml' encfs --extpass='echo ' --public /home/kamos/acd/.cloud /home/kamos/acd/cloud
+
+# Mount ACD Crypt
+#/usr/bin/rclone mount acdcrypt: /home/kamos/media --read-only --allow-other &
+/usr/bin/rclone mount \
+       --read-only \
+       --allow-other \
+       --buffer-size 1G \
+       --acd-templink-threshold 0 \
+       acdcrypt: /home/kamos/media &
+
+# Setup Unionfs-Fuse
+unionfs-fuse -o cow -o allow_other /home/kamos/.media=RW:/home/kamos/media=RO /home/kamos/cloud
