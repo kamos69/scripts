@@ -30,7 +30,7 @@ sudo /bin/tar -cvf $BK_PATH/plexpy/plexpy-`date \+%Y\%m\%d`.tar.gz "$PP_PATH/con
 
 ### Ombi
 # File location
-OMBI_PATH=/opt/plexrequests
+OMBI_PATH=/opt/ombi
 # Create archive
 sudo /bin/tar -cvf $BK_PATH/ombi/ombi-`date \+%Y\%m\%d`.tar.gz "$OMBI_PATH/Ombi.sqlite"
 
