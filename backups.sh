@@ -57,7 +57,7 @@ crontab -l > $BK_PATH/cron-backup.txt
 
 ### Scripts
 # File location
-SCRIPTS_PATH=/home/$USER/scripts/
+SCRIPTS_PATH=/home/$USER/scripts
 # Create dir if it doesn't exist
 mkdir -p "$BK_PATH/plexpy"
 # Create archive
