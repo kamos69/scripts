@@ -79,7 +79,7 @@ mkdir -p "$BK_PATH/jackett"
 
 ### Rclone
 # Rsync to backup folder
-sudo rsync -azv /home/$USER/rclone.conf $BK_PATH/
+sudo rsync -azv /home/$USER/.rclone.conf $BK_PATH/
 
 ### Config
 # File location
