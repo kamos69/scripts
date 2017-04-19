@@ -22,6 +22,12 @@ RT_PATH=/home/$USER
 # Create archive
 /bin/tar -cvf $BK_PATH/rtorrent/rtorrent-`date \+%Y\%m\%d`.tar.gz "$RT_PATH/.sessions/" "$RT_PATH/.rtorrent.rc"
 
+### Deluge
+# File location
+DE_PATH=/home/$USER/.config/deluge
+# Create archive
+/bin/tar -cvf $BK_PATH/deluge/deluge-`date \+%Y\%m\%d`.tar.gz "$DE_PATH/core.conf" "$DE_PATH/web.conf" "$DE_PATH/session.state" "$DE_PATH/state/torrents.state" "$DE_PATH/state/torrents.fastresume"
+
 ### PlexPy
 # File location
 PP_PATH=/opt/plexpy
@@ -48,6 +54,12 @@ sudo /bin/tar -cvf $BK_PATH/scripts/scripts-`date \+%Y\%m\%d`.tar.gz $SCRIPTS_PA
 PLEX_PATH=/var/lib/plexmediaserver/
 # Rsync to backup folder
 sudo rsync -azv $PLEX_PATH $BK_PATH/plex/
+
+### Jackett
+# File location
+JA_PATH=/home/$USER/.config/Jackett
+# Create archive
+/bin/tar -cvf $BK_PATH/jackett/jackett-`date \+%Y\%m\%d`.tar.gz "$JA_PATH/ServerConfig.json"
 
 ### Rclone
 # Rsync to backup folder
