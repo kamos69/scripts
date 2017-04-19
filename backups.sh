@@ -26,7 +26,7 @@ RT_PATH=/home/$USER
 # File location
 DE_PATH=/home/$USER/.config/deluge
 # Create archive
-/bin/tar -cvf $BK_PATH/deluge/deluge-`date \+%Y\%m\%d`.tar.gz "$DE_PATH/core.conf" "$DE_PATH/web.conf" "$DE_PATH/session.state" "$DE_PATH/state/torrents.state" "$DE_PATH/state/torrents.fastresume"
+/bin/tar -cvf $BK_PATH/deluge/deluge-`date \+%Y\%m\%d`.tar.gz "$DE_PATH/core.conf" "$DE_PATH/web.conf" "$DE_PATH/session.state" "$DE_PATH/state/"
 
 ### PlexPy
 # File location
