@@ -76,6 +76,12 @@ mkdir -p "$BK_PATH/jackett"
 # Create archive
 /bin/tar -cvf $BK_PATH/jackett/jackett-`date \+%Y\%m\%d`.tar.gz "$JA_PATH/ServerConfig.json"
 
+### Jackett
+# File location
+JA_PATH=/home/$USER/.config/Jackett
+# Create archive
+/bin/tar -cvf $BK_PATH/jackett/jackett-`date \+%Y\%m\%d`.tar.gz "$JA_PATH/ServerConfig.json"
+
 ### Rclone
 # Rsync to backup folder
 sudo rsync -azv /home/$USER/.rclone.conf $BK_PATH/
