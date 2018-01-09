@@ -18,7 +18,7 @@ Once yourCrontab for `backup.sh`
 ```
 @reboot /home/$USER/unionfs-fuse.sh > /home/$USER/logs/acd_boot.log 2>&1
 * * * * * /home/$USER/scripts/rclone-cron.sh > /dev/null 2>&1
-*/5 * * * * python /home/kamos/crons/acdrclonemountchecker.py > /dev/null 2>&1
+*/5 * * * * python /home/$USER/scripts/acdrclonemountchecker.py > /dev/null 2>&1
 30 3 * * 1 /home/$USER/scripts/backups.sh >> /home/$USER/logs/backups.log 2>&1
 ```
 ### Credits
