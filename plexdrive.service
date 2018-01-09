@@ -1,0 +1,13 @@
+[Unit]
+Description=pdrive
+AssertPathIsDirectory=/home/kamos/pdrive/
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/plexdrive mount -c /home/kamos/.plexdrive -o allow_other -v 2 /home/kamos/pdrive/
+ExecStop=/bin/fusermount -u /home/kamos/pdrive/
+Restart=on-abort
+
+[Install]
+WantedBy=default.target

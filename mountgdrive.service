@@ -1,0 +1,13 @@
+[Unit]
+Description=Google Drive (rclone)
+AssertPathIsDirectory=/home/kamos/media/
+After=plexdrive.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount --config /home/kamos/.rclone.conf --read-only --allow-other --stats 10s --buffer-size 500M -v --log-file=/home/kamos/logs/mount.log media:/ /home/kamos/media/
+ExecStop=/bin/fusermount -u /home/kamos/media/
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
