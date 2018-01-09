@@ -65,7 +65,7 @@ mkdir -p "$BK_PATH/plexpy"
 
 ### Plex
 # File location
-#PLEX_PATH=/var/lib/plexmediaserver/
+# PLEX_PATH=/var/lib/plexmediaserver/
 # Rsync to backup folder
 # sudo rsync -azv $PLEX_PATH $BK_PATH/plex/
 
