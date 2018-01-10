@@ -20,6 +20,7 @@ Once yourCrontab for `backup.sh`
 * * * * * /home/$USER/scripts/rclone-cron.sh > /dev/null 2>&1
 */5 * * * * python /home/$USER/scripts/acdrclonemountchecker.py > /dev/null 2>&1
 30 3 * * 1 /home/$USER/scripts/backups.sh >> /home/$USER/logs/backups.log 2>&1
+0 * * * * sudo /home/$USER/scripts/plexscan.sh  > /dev/null 2>&1
 ```
 ### Credits
 https://quickbox.io/
