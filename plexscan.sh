@@ -13,9 +13,9 @@ if pidof -o %PPID -x "$0"; then
 fi
 
 #SETTINGS
-MOVIELIBRARY="/home/kamos/media/movies"
+MOVIELIBRARY="/home/kamos/cloud/movies"
 MOVIESECTION=2
-TVLIBRARY="/home/kamos/media/tv"
+TVLIBRARY="/home/kamos/cloud/tv"
 TVSECTION=1
 LOGFILE="/home/kamos/logs/plexscan.log"
 FOLDERLISTFILE="/home/kamos/.cache/folderlistfile"
