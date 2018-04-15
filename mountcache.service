@@ -1,0 +1,28 @@
+[Unit]
+Description=cache
+AssertPathIsDirectory=/home/kamos/cache
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount drive_cache: /home/kamos/cache \
+ --config /home/kamos/.rclone.conf \
+ --allow-other \
+ --cache-chunk-path=/home/kamos/.cache/rclone/cache-backend/drive_cache \
+ --cache-db-path=/home/kamos/.cache/rclone/cache-backend/drive_cache.db \
+ --dir-cache-time=160h \
+ --cache-chunk-size=5M \
+ --cache-info-age=168h \
+ --cache-workers=5 \
+ --cache-tmp-upload-path /home/kamos/temp_upload \
+ --cache-tmp-wait-time 30m \
+ --buffer-size 0M \
+ --attr-timeout=1s \
+ --rc \
+ --log-level INFO \
+ --log-file=/home/kamos/logs/cache.log
+ExecStop=/bin/fusermount -u /home/kamos/cache/
+Restart=on-abort
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=Mount Decrypted Rclone Cache Drive
+AssertPathIsDirectory=/home/kamos/gdrive/
+After=mountcache.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount cache_crypt:/ /home/kamos/gdrive/ \
+ --config /home/kamos/.rclone.conf \
+ --allow-other \
+ --buffer-size 500M \
+ --log-level INFO \
+ --log-file=/home/kamos/logs/gdrive.log
+ExecStop=/bin/fusermount -u /home/kamos/gdrive/
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
