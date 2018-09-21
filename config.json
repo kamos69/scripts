@@ -71,7 +71,7 @@
     ]
   }, 
   "PLEX_SUPPORT_DIR": "/var/lib/plexmediaserver/Library/Application\\ Support", 
-  "PLEX_TOKEN": "qKGz1xyz1X7ypGdhVsYz", 
+  "PLEX_TOKEN": "", 
   "PLEX_USER": "plex", 
   "PLEX_WAIT_FOR_EXTERNAL_SCANNERS": true, 
   "RCLONE_RC_CACHE_EXPIRE": {
