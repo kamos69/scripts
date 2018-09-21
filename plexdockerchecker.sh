@@ -43,5 +43,5 @@ if [ "$firstcheck" != "" ]; then
 	fi
 else
 	echo "INF $(date) - Plex docker container responded on first attempt."
-	source /home/kamos/pushbullet.sh "INF $(date) - Plex docker container responded on first attempt."
+#	source /home/kamos/pushbullet.sh "INF $(date) - Plex docker container responded on first attempt."
 fi
