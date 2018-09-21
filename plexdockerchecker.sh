@@ -19,29 +19,29 @@ fi
 firstcheck=$((curl -sSf -m30 http://127.0.0.1:32400/web/) 2>&1)
 if [ "$firstcheck" != "" ]; then
 	echo "WRN $(date) - Plex did not respond in first check, waiting 15 seconds.."
-	source pushbullet.sh "WRN $(date) - Plex did not respond in first check, waiting 15 seconds.."
+	source /home/kamos/pushbullet.sh "WRN $(date) - Plex did not respond in first check, waiting 15 seconds.."
 	sleep 15
 	secondcheck=$((curl -sSf -m30 http://127.0.0.1:32400/web/) 2>&1)
 	if [ "$secondcheck" != "" ]; then
 		echo "WRN $(date) - Plex did not respond in second check either, restarting docker container."
-		source pushbullet.sh "WRN $(date) - Plex did not respond in second check either, restarting docker container."
+		source /home/kamos/pushbullet.sh "WRN $(date) - Plex did not respond in second check either, restarting docker container."
 
 		echo "INF $(date) - Stopping docker $dockerid."
-		source pushbullet.sh "INF $(date) - Stopping docker $dockerid."
+		source /home/kamos/pushbullet.sh "INF $(date) - Stopping docker $dockerid."
 #		docker stop $dockerid
 
 		echo "INF $(date) - Waiting 15 seconds.."
-		source pushbullet.sh "INF $(date) - Waiting 15 seconds.."
+		source /home/kamos/pushbullet.sh "INF $(date) - Waiting 15 seconds.."
 		sleep 15
 
 		echo "INF $(date) - Starting docker $dockerid."
-		source pushbullet.sh "INF $(date) - Starting docker $dockerid."
+		source /home/kamos/pushbullet.sh "INF $(date) - Starting docker $dockerid."
 #		docker start $dockerid
 	else
 		echo "INF $(date) - Plex docker container responded on second attempt."
-		source pushbullet.sh "INF $(date) - Plex docker container responded on second attempt."
+		source /home/kamos/pushbullet.sh "INF $(date) - Plex docker container responded on second attempt."
 	fi
 else
 	echo "INF $(date) - Plex docker container responded on first attempt."
-	source pushbullet.sh "Boxee" "INF $(date) - Plex docker container responded on first attempt."
+	source /home/kamos/pushbullet.sh "INF $(date) - Plex docker container responded on first attempt."
 fi
