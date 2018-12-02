@@ -1,4 +1,4 @@
-# Scripts for use on Quickbox Server
+# Scripts for use on Media Server
 Scripts for managing my Ubuntu / Rclone / Plex Server.
 
 ### Preqreuisites
@@ -22,5 +22,3 @@ Once yourCrontab for `backup.sh`
 30 3 * * 1 /home/$USER/scripts/backups.sh >> /home/$USER/logs/backups.log 2>&1
 0 * * * * sudo /home/$USER/scripts/plexscan.sh  > /dev/null 2>&1
 ```
-### Credits
-https://quickbox.io/
