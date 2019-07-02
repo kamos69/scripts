@@ -1,7 +1,7 @@
 # Scripts for use on Media Server
 Scripts for managing my Ubuntu / Rclone / Plex Server.
 
-### Preqreuisites
+### Prerequisites
 NOTE: It is assumed that you used the Quickbox script to setup your server using the default folder structures.
 
 ### Getting Started
