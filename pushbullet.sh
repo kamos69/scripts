@@ -12,6 +12,6 @@ if [ $# -lt 2 ]; then
 	TITLE="`whoami`@${HOSTNAME}"
 fi
 
-ACCESS_TOKEN="o.8ADpCA1QSx4MwW7YvNAI6f6KusXeRrCN"
+ACCESS_TOKEN="YOUR_TOKEN_HERE"
 
 curl -s -u $ACCESS_TOKEN: -X POST https://api.pushbullet.com/v2/pushes --header 'Content-Type: application/json' --data-binary '{"type": "note", "title": "'"$TITLE"'", "body": "'"$MESSAGE"'"}' >/dev/null 2>&1 
