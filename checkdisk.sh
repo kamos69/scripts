@@ -10,9 +10,9 @@ fi
 
 #Settings
 root='/dev/md2'
-media_folder='/home/kamos/.media/'
+media_folder='/mnt/downloads/'
 max_usage=95%
-file_age=30
+file_age=15
 LOGFILE="/home/kamos/logs/checkdisk.log"
 
 current_usage=$( df -h | grep $root | awk {'print $5'} )
